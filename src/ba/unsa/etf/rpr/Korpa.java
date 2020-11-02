@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 public class Korpa {
     private Artikl[] artikli;
-    int broj_artikala;
+    private int broj_artikala;
 
 
     Korpa() {
@@ -10,8 +10,12 @@ public class Korpa {
         broj_artikala = 0;
     }
 
+    int dajBrojArtikala() {
+        return broj_artikala;
+    }
+
     boolean dodajArtikl(Artikl a) {
-        if (broj_artikala < 200) {
+        if (broj_artikala < 50) {
             artikli[broj_artikala] = new Artikl(a.getNaziv(), a.getCijena(), a.getKod());
             broj_artikala = broj_artikala + 1;
             return true;
@@ -28,10 +32,7 @@ public class Korpa {
                     artikli[i] = new Artikl(artikli[broj_artikala - 1].getNaziv(), artikli[broj_artikala - 1].getCijena(), artikli[broj_artikala - 1].getKod());
                     artikli[broj_artikala] = null;
                 }
-                System.out.println("Sad je broj elemenata " + broj_artikala);
-                for (int j = 0; j < broj_artikala; j++) {
-                    System.out.println("Artikl sa kodom: " + artikli[j].getKod());
-                }
+
                 broj_artikala = broj_artikala - 1;
                 return pomocni;
             }

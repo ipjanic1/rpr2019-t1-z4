@@ -3,11 +3,15 @@ package ba.unsa.etf.rpr;
 public class Supermarket {
 
     private Artikl[] artikli;
-    int broj_artikala;
+    private int broj_artikala;
 
     Supermarket () {
         artikli = new Artikl[200];
         broj_artikala = 0;
+    }
+
+    int getBrojArtikala() {
+        return broj_artikala;
     }
 
     Artikl izbaciArtiklSaKodom (String kod){
@@ -20,10 +24,6 @@ public class Supermarket {
                     artikli[broj_artikala] = null;
                 }
                 broj_artikala = broj_artikala - 1;
-                System.out.println("Sad je broj elemenata " + broj_artikala);
-                for (int j = 0; j < broj_artikala; j++) {
-                    System.out.println("Artikl sa kodom: " + artikli[j].getKod());
-                }
                 return pomocni;
             }
         }
